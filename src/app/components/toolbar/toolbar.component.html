@@ -1,1 +1,20 @@
-<p>toolbar works!</p>
+<mat-toolbar>
+    <span *ngIf="scoreService.nomJoueurCourant!=='';else elseTemplate">
+        <app-ajout-score></app-ajout-score>
+    </span>
+    <ng-template #elseTemplate>
+        <span>Pas de partie en cours : <a [routerLink]="[ '/new' ]">Nouvelle Partie</a></span>
+    </ng-template>
+
+    <span class="fill"></span>
+    <span>
+        <app-bouton-undo></app-bouton-undo>
+        <button mat-icon-button arial-label="More" [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="[ '/new' ]">Nouvelle partie</button>
+            <button mat-menu-item [routerLink]="[ '/' ]">Partie en cours</button>
+        </mat-menu>
+    </span>
+</mat-toolbar>

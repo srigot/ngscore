@@ -1,1 +1,24 @@
-<p>formulaire-joueurs works!</p>
+<div class="container form-container">
+    <form [formGroup]="formulaire">
+        <mat-form-field>
+            <mat-select placeholder="Nombre de joueurs" formControlName="nombreJoueurs">
+                <mat-option value=1>1 Joueur</mat-option>
+                <mat-option value=2>2 Joueurs</mat-option>
+                <mat-option value=3>3 Joueurs</mat-option>
+                <mat-option value=4>4 Joueurs</mat-option>
+                <mat-option value=5>5 Joueurs</mat-option>
+                <mat-option value=6>6 Joueurs</mat-option>
+                <mat-option value=7>7 Joueurs</mat-option>
+                <mat-option value=8>8 Joueurs</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div formArrayName="listeJoueurs">
+            <div *ngFor="let joueur of listeJoueurs.controls; let i=index">
+                <mat-form-field>
+                    <input matInput [placeholder]="'Joueur '+(i+1)" [formControlName]="i">
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-button color="primary" (click)="onSubmit()">Valider</button>
+    </form>
+</div>
