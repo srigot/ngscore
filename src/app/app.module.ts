@@ -23,6 +23,9 @@ import { FormulaireJoueursComponent } from './components/formulaire-joueurs/form
 import { GrilleScoreComponent } from './components/grille-score/grille-score.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { rootReducer } from './store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot(rootReducer),
+    StoreDevtoolsModule.instrument({
+      name: '[SCORE]',
+      maxAge: 25,
+    }),
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
