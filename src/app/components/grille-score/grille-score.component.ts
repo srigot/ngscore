@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grille-score.component.scss']
 })
 export class GrilleScoreComponent implements OnInit {
+
   listeJoueurs = [
     'Toto', 'Titi'
   ];
@@ -20,7 +21,8 @@ export class GrilleScoreComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

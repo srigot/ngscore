@@ -27,7 +27,7 @@ export class FormulaireJoueursComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // this.subscriptions = this.formulaire.get('nombreJoueurs').valueChanges.subscribe(
+    // this.subscriptions = this.formulaire.get('nombreJoueurs')?.valueChanges.subscribe(
     //   val => {
     //     if (val && val >= 0) {
     //       this.updateNombreJoueurs(val);
